@@ -14,10 +14,10 @@ function SignUp() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.get("http://localhost:5000/signup") //backend api
+        axios.get("http://localhost:5000/api/signup") //backend api
 
     }
-  return <div>
+  return <div className="signup-form">
     <form onSubmit={handleSubmit}>
         <div className="username">
         <span>Username:</span>
