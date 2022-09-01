@@ -1,0 +1,15 @@
+.header{
+    padding:3%;
+   background-color: beige;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header a{
+    color:black;
+    text-decoration: none;
+    font-weight: 700;
+}
+.header a :active{
+    color:blue;
+}
