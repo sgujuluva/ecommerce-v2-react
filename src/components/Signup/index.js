@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 //styles
 import "./Signup.css"
 
 function SignUp() {
+    const [user,setUser] = useState({})
   return <div>
     <form>
         <span>Username:</span>
