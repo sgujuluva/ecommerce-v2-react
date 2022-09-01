@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios"
 //styles
 import "./Signup.css"
 
@@ -13,6 +14,8 @@ function SignUp() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
+        axios.get("http://localhost:5000/signup") //backend api
+
     }
   return <div>
     <form onSubmit={handleSubmit}>
