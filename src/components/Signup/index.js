@@ -18,9 +18,9 @@ function SignUp() {
             method:"POST",
             body : JSON.stringify(user),
             headers:{
-
+                "Content-type": "application/json; charset=UTF-8"
             }
-        }) //backend api
+        }).then(data => console.log(data)) //backend api
 
     }
   return <div className="signup-form">
@@ -37,7 +37,10 @@ function SignUp() {
        <span>Password:</span>
        <input onChange={handleChange} type="password" placeholder="Enter your password" name = "password" required/>
        </div>
+       <div className="button">
        <button>Sign Up</button>
+       </div>
+       
     </form>
   </div>;
 }
