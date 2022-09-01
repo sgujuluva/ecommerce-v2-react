@@ -21,12 +21,20 @@ const uid = () => {
 }
 
 app.post("/api/signup", async(req, res) => {
-    if (db.data.users.some(item => item.email !== req.body.email)){
-        db.data.users.push(req.body);
+
+    let checkEmail = db.data.users.find(item => item.email !== req.body.email)
+
+    if (checkEmail){
+
+        let newUser = req.body;
+        newUser.id = uid();
+        db.data.users.push(newUser);
+
         await db.write();
-        res.send({user: req.body, msg : "user added to db", success : true})
+
+        res.send({user: newUser, msg : "user added to db", success : false})
     }else {
-        res.send({msg:"user already exist"})
+        res.send({user: req.body,msg:"user already exist",success : true})
     }
    
 })
