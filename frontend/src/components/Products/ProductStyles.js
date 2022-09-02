@@ -14,10 +14,9 @@ button{
 
 }
 img{
-    width:100%;
-border:2px solid red;
-max-height:300px;
-margin:3% 0;
+  width:250px;
+  height:250px;
+margin-left:10%;
 object-fit:contain;
 border-radius:25px;
 }
