@@ -7,7 +7,16 @@ import Badge from "@material-ui/core/Badge";
 
 //styles
 import "./Home.css"
+import {Wrapper} from "./StyledCompHome";
 
+//api
+
+const fetchApi = async() => {
+  const response = await fetch("https://fakestoreapi.com/products");
+  const data = await(response.json());
+  console.log(data)
+}
+fetchApi();
 function Home() {
   return (
     <div>Home</div>
