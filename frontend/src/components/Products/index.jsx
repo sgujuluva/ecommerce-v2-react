@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import {WrapperProd} from "./ProductStyles"
 
 function Products({prods}) {
+    const handleAddToCart = (item) => null;
   return (
     <div>
        <WrapperProd> 
@@ -13,6 +14,7 @@ function Products({prods}) {
             <p>{prods.description}</p>
             <h3>{prods.price}</h3>
           </div>
+          <Button onClick={() => handleAddToCart()}>Add to Cart</Button>
        </WrapperProd> 
     </div>
   )
