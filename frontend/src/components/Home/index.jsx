@@ -30,9 +30,9 @@ function Home() {
 
   return( 
   <Wrapper>
-    <Grid container spacing={3}>
+    <Grid container spacing={2}>
     {data?.map(item =>(
-      <Grid item key={item.id} xs={12} sm={4}>
+      <Grid item key={item.id} xs={6} sm={3}>
     <Products prods ={item}/>
     </Grid>
     ))}
