@@ -7,6 +7,19 @@ function SignUp() {
   const [user, setUser] = useState({ username: "", email: "", password: "" });
   const [checkPassword, setCheckPassword] = useState(false)
 
+  const fetchApi = async () => {
+    console.log(user)
+    const response = await axios.post("http://localhost:8080/api/signup", {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+    //backend api
+    console.log(response.data);
+  };
+
   const handleChange = (e) => {
     setUser((prev) => ({
       ...prev,
@@ -16,15 +29,7 @@ function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if(checkPassword){
-    axios
-      .get("http://localhost:5000/api/signup", {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-      .then((data) => console.log(data)); //backend api
+   fetchApi();
   };
 }
 

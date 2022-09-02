@@ -1,12 +1,22 @@
-import React, {useState} from 'react'
-import axios from 'axios';
-import "./Login.css"
+import React, { useState } from "react";
+import axios from "axios";
+import "./Login.css";
+//axios
 
 function Login() {
-  
-        const [user, setUser] = useState({ email: "", password: "" });
- 
+  const [user, setUser] = useState({ email: "", password: "" });
 
+  const fetchApi = async () => {
+    const response = await axios.get("http://localhost:8080/api/login", {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+    //backend api
+    console.log(response.data);
+  };
   const handleChange = (e) => {
     setUser((prev) => ({
       ...prev,
@@ -15,24 +25,12 @@ function Login() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    axios
-      .get("http://localhost:5000/api/login", {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-      .then((data) => console.log(data)); //backend api
+    fetchApi();
   };
-
 
   return (
     <div className="login-form">
-    
       <form onSubmit={handleSubmit}>
-        
         <div className="email">
           <span>Email:</span>
           <input
@@ -53,13 +51,13 @@ function Login() {
             required
           />
         </div>
-        
+
         <div className="button">
           <button>Login</button>
         </div>
       </form>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;
