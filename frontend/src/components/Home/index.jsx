@@ -29,9 +29,15 @@ function Home() {
   if (error) return <p>Oops,Something Went Wrong!!!</p>;
 
   return( 
-  <div>
-    {data.map(item => <li><Products prods ={item}/></li>)}
-  </div>
+  <Wrapper>
+    <Grid container spacing={3}>
+    {data?.map(item =>(
+      <Grid item key={item.id} xs={12} sm={4}>
+    <Products prods ={item}/>
+    </Grid>
+    ))}
+    </Grid>
+  </Wrapper>
   );
 }
 
