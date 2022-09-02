@@ -12,7 +12,7 @@ function Products({prods}) {
           <div className="prod-details">
             <h3>{prods.title}</h3>
             <p>{prods.description}</p>
-            <h3>{prods.price}</h3>
+            <h3>{prods.price},-€</h3>
           </div>
           <Button onClick={() => handleAddToCart()}>Add to Cart</Button>
        </WrapperProd> 
