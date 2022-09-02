@@ -8,6 +8,8 @@ import Grid from "@material-ui/core/Grid";
 import ShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import Badge from "@material-ui/core/Badge";
 
+//comp
+import Products from "../Products/index"
 //styles
 import "./Home.css";
 import { Wrapper } from "./StyledCompHome";
@@ -26,7 +28,11 @@ function Home() {
   if (isLoading) return <LinearProgress />;
   if (error) return <p>Oops,Something Went Wrong!!!</p>;
 
-  return <div>Home</div>;
+  return( 
+  <div>
+    {data.map(item => <li><Products prods ={item}/></li>)}
+  </div>
+  );
 }
 
 export default Home;
