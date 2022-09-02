@@ -7,7 +7,7 @@ function Products({prods}) {
   return (
     <div>
        <WrapperProd> 
-          <img src={prods.img} alt="" />
+          <img src={prods.image} alt="" />
           <div className="prod-details">
             <h3>{prods.title}</h3>
             <p>{prods.description}</p>
