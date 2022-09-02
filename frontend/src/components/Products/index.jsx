@@ -1,18 +1,19 @@
 import React from 'react'
 import Button from "@material-ui/core/Button";
 //styles
-import {Wrapper} from "./ProductStyles"
+import {WrapperProd} from "./ProductStyles"
 
 function Products({prods}) {
   return (
     <div>
-       <Wrapper> 
+       <WrapperProd> 
           <img src={prods.img} alt="" />
           <div className="prod-details">
             <h3>{prods.title}</h3>
-            
+            <p>{prods.description}</p>
+            <h3>{prods.price}</h3>
           </div>
-       </Wrapper> 
+       </WrapperProd> 
     </div>
   )
 }
