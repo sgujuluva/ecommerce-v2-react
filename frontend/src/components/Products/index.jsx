@@ -2,11 +2,12 @@ import React from 'react'
 import Button from "@material-ui/core/Button";
 //styles
 import {WrapperProd} from "./ProductStyles"
+import "./products.css"
 
 function Products({prods}) {
     const handleAddToCart = (item) => null;
   return (
-    <div>
+    <div className = "prods-list">
        <WrapperProd> 
           <img src={prods.image} alt="" />
           <div className="prod-details">

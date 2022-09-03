@@ -14,8 +14,8 @@ button{
 
 }
 img{
-  width:250px;
-  height:250px;
+  width:75%;
+  height:25%;
 margin-left:10%;
 object-fit:contain;
 border-radius:25px;
@@ -41,6 +41,7 @@ border-radius:25px;
         -webkit-box-orient: vertical; 
         overflow: hidden; 
     }
+    
 }
 
 `;

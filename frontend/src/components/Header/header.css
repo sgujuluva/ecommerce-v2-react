@@ -1,0 +1,7 @@
+/* responsive */
+@media only screen and (max-width:750px) {
+.header a{
+    border:2px solid red;
+    font-size: 1rem;
+}
+   }

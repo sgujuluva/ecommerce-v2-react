@@ -1,0 +1,10 @@
+/* responsive */
+@media only screen and (max-width:1150px) {
+    .prods-list img{
+width:150px;
+height:150px;
+       } 
+       .prods-list .prod-details{
+        font-size: 1rem;
+       }
+   }
