@@ -3,11 +3,10 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import Drawer from "@material-ui/core/Drawer";
 import LinearProgress from "@material-ui/core/LinearProgress";
-import CircularProgress from "@material-ui/core/CircularProgress";
 import Grid from "@material-ui/core/Grid";
 import ShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import Badge from "@material-ui/core/Badge";
-
+import Banner from "../../images/banner1.png"
 //comp
 import Products from "../Products/index"
 //styles
@@ -30,6 +29,9 @@ function Home() {
 
   return( 
   <Wrapper>
+   <div className="banner-image">
+    <span>eCommerce-Shopping</span>
+   </div>
     <Grid container spacing={2}>
     {data?.map(item =>(
       <Grid item key={item.id} xs={6} sm={3}>
