@@ -32,7 +32,7 @@ function Home() {
    <div className="banner-image">
     <span>eCommerce-Shopping</span>
    </div>
-    <Grid container spacing={2}>
+    <Grid container  spacing={2}>
     {data?.map(item =>(
       <Grid item key={item.id} xs={6} sm={3}>
     <Products prods ={item}/>

@@ -9,7 +9,9 @@ function Products({prods}) {
   return (
     <div className = "prods-list">
        <WrapperProd> 
+        <span>
           <img src={prods.image} alt="" />
+        </span>
           <div className="prod-details">
             <h3>{prods.title}</h3>
             <p>{prods.description}</p>
