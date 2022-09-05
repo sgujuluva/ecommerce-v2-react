@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import { NavLink } from "react-router-dom";
 import { Wrapper } from "./Headerstyled";
 import ShoppingBasketIcon from "../../images/cart.png";
 import "./header.css";
 
 function Header() {
+  //state for selected category
+
   return (
     <Wrapper className="header">
       <NavLink to="/">
