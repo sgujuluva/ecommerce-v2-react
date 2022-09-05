@@ -5,7 +5,7 @@ export const WrapperProd = styled.div`
   flex-direction: column;
   box-shadow: 0 0 10px;
   border-radius: 25px;
-
+  padding : 2% ;
   button {
     border-radius: 20px;
     background-color: orange;
@@ -19,7 +19,7 @@ export const WrapperProd = styled.div`
     border-radius: 25px;
   }
   .prod-details {
-    width: 95%;
+    width: 95%;  
     display: flex;
     flex-direction: column;
     justify-content: space-between;

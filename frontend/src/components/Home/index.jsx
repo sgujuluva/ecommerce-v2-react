@@ -57,6 +57,7 @@ function Home() {
             <Products prods={item} handleAddToCart={handleAddToCart} />
           </Grid>
         )) */
+        
         }
       </Grid>
     </Wrapper>
