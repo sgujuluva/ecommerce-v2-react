@@ -7,7 +7,7 @@ import "./header.css"
 function Header() {
   return (
     <Wrapper className="header">
-      <NavLink to={"/"}><span>eShopping</span> </NavLink>
+      <NavLink to="/"><span>eShopping</span> </NavLink>
       <div className="search-item">
         <div className="search">
           <input type="text" placeholder="Search item" />
