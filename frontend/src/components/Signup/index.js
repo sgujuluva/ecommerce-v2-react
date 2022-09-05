@@ -11,7 +11,7 @@ function SignUp() {
 
   const fetchApi = async () => { //fetch data from backend
    
-      const response = await axios.post("http://localhost:8090/api/signup", {
+      const response = await axios.post("http://localhost:8080/api/signup", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {

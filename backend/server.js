@@ -20,7 +20,7 @@ app.use(express.json());
 
   
 app.listen(8090, () => {
-    console.log("Server running at the PORT 8090");
+    console.log("Server running at the PORT 8080");
 })
 
 const uid = () => {

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Wrapper } from "./Headerstyled";
+import ShoppingBasketIcon from "../../images/cart.png";
 import "./header.css"
 
 function Header() {
@@ -15,8 +16,12 @@ function Header() {
           <button>Search</button>
         </div>
       </div>
-      <NavLink to={"/signup"}>Sign in</NavLink>
+      <NavLink to={"/signup"}>Sign up</NavLink>
       <NavLink to={"/login"}>Login</NavLink>
+      <div className="shopping-basket">
+        <img src={ ShoppingBasketIcon} alt="" />
+        <span>0</span>
+      </div>
     </Wrapper>
   );
 }

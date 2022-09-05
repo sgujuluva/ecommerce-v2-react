@@ -12,9 +12,9 @@ a{
     font-size:1.5rem;
     font-weight:800;
 }
-.search-item{
-  
-    width:25%;
+.search-item{  
+    border:2px solid red;
+    width:40%;
     display:flex;
     justify-content:space-evenly;
     align-items:center;
@@ -24,12 +24,23 @@ a{
     font-weight:800;
 }
 .search input{
-      padding:4%;
-      border-radius:25px;
+      padding:4%;    
 
 }
 .search-button button{
    padding:4%;
-   border-radius:25px;
+
 }
+.shopping-basket{
+    display:flex;
+    justify-content:center;
+    align-items : center;
+}
+.shopping-basket img{
+    width:20%;
+    padding:5%;
+    }
+    .shopping-basket span{
+       font-weight:800;
+        }
 `;
