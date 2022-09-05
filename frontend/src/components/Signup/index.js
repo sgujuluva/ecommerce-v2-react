@@ -9,7 +9,7 @@ function SignUp() {
   const [user, setUser] = useState({ username: "", email: "", password: "" });
   const [checkPassword, setCheckPassword] = useState(false)
 
-  const fetchApi = async () => {
+  const fetchApi = async () => { //fetch data from backend
    
       const response = await axios.post("http://localhost:8090/api/signup", {
       method: "POST",
@@ -19,7 +19,6 @@ function SignUp() {
       },
     });
     //backend api
-    console.log("signup response",response.data);
     return response.data;
   };
 
@@ -32,12 +31,12 @@ function SignUp() {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { //multiple things on clicking signup form
     e.preventDefault();
-    if(checkPassword){
-   fetchApi().then(data => {
+    if(checkPassword){   //1. check checkpwd is true, then 
+   fetchApi().then(data => {     
     if(data.success){
-      navigate("/", {state : data.user})
+      navigate("/", {state : data.user})//once the signup button pressed if user doesn't exist already , user will be added to db and signup page is navigated to home page
     }
    });
 

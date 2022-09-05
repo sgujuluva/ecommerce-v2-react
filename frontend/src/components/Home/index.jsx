@@ -24,12 +24,11 @@ const fetchApi = async () => {
 const handleAddToCart = () => {};
 
 function Home() {
+  
   let location = useLocation();
 
   //fetching data from api
   const { data, isLoading, error } = useQuery("products", fetchApi);
-  //cart items
-  const [cartItems, setCartItems] = useState([]);
 
   if (isLoading) return <LinearProgress />;
   if (error) return <p>Oops,Something Went Wrong!!!</p>;
