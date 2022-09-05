@@ -21,44 +21,46 @@ const fetchApi = async () => {
 const handleAddToCart = () => {};
 
 function Home() {
-
   const [prodType, setProdType] = useState("all");
 
-  let location = useLocation();
+  let location = useLocation(); //navigating the signup page to home page
 
   //fetching data from api
   const { data, isLoading, error } = useQuery("products", fetchApi);
-let prodAll = data;
-(  prodType !== "all") && (prodAll = data.filter(item => item.category === (prodType)) )
+  //filtering items
+  let prodAll = data;
+  prodType !== "all" &&
+    (prodAll = data.filter((item) => item.category === prodType));
 
   if (isLoading) return <LinearProgress />;
   if (error) return <p>Oops,Something Went Wrong!!!</p>;
-  console.log(prodType)
+
+    console.log(prodType);
+
   return (
     <Wrapper>
-
-      <Header  setProdType = {setProdType}/>
+      <Header setProdType={setProdType} />
 
       <div className="banner-image">
         <span>eCommerce-Shopping</span>
       </div>
       <Grid container spacing={2}>
-
-        {prodAll.map ((item) => (
-          <Grid item key={item.id} xs={6} sm={3}>
-            <Products prods={item} handleAddToCart={handleAddToCart} />
-          </Grid>
-        ))
-       /*  :
+        {
+          prodAll.map((item) => (
+            <Grid item key={item.id} xs={6} sm={3}>
+              <Products prods={item} handleAddToCart={handleAddToCart} />
+            </Grid>
+          ))
+          /*  :
         data?.filter(item => item.category === (prodType)).map((item) => (
           <Grid item key={item.id} xs={6} sm={3}>
             <Products prods={item} handleAddToCart={handleAddToCart} />
           </Grid>
-        )) */}
+        )) */
+        }
       </Grid>
     </Wrapper>
   );
- 
 }
 
 export default Home;

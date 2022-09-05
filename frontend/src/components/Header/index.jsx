@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Wrapper } from "./Headerstyled";
-//dropdown
-import Dropdown from "rsuite/Dropdown";
-import "rsuite/dist/rsuite.min.css";
 
 import ShoppingBasketIcon from "../../images/cart.png";
 import Home from "../Home/index";
