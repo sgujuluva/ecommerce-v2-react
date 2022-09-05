@@ -5,6 +5,7 @@ import {WrapperProd} from "./ProductStyles"
 import "./products.css"
 
 function Products({prods}) {
+  console.log(prods)
     const handleAddToCart = (item) => null;
   return (
     <div className = "prods-list">

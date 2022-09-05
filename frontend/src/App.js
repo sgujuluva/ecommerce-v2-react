@@ -8,20 +8,14 @@ import Home from "./components/Home";
 //styles
 import "./App.css";
 import Login from "./components/Login";
+import { useState } from "react";
 
 function App() {
+ 
   return (
     <div className="main">
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Header />
-              <Home />
-            </>
-          }
-        />
+        <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />

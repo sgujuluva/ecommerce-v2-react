@@ -1,24 +1,31 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Wrapper } from "./Headerstyled";
+//dropdown
+import Dropdown from "rsuite/Dropdown";
+import "rsuite/dist/rsuite.min.css";
+
 import ShoppingBasketIcon from "../../images/cart.png";
+import Home from "../Home/index";
 import "./header.css";
 
-function Header() {
-  //state for selected category
-
+function Header({ setProdType }) {
   return (
     <Wrapper className="header">
       <NavLink to="/">
         <span>eShopping</span>{" "}
       </NavLink>
-      {/* catgory */}
-      <select id="all">
+      {/* category */}
+      <select onChange={(e) => setProdType(e.target.value)} id="all">
         <option value="all">All</option>
-        <option value="man">Men</option>
-        <option value="women">Women</option>
+        <option value="men's clothing">Men</option>
+        <optgroup label="women">
+          <option value="jewelery">Accessories</option>
+          <option value="women's clothing">Clothing</option>
+        </optgroup>
         <option value="electronics">Electronics</option>
       </select>
+      
       {/* search bar */}
       <div className="search-item">
         <div className="search">
@@ -37,6 +44,7 @@ function Header() {
         <img src={ShoppingBasketIcon} alt="" />
         <span>0</span>
       </div>
+      {/*   <Home category = {category}/> */}
     </Wrapper>
   );
 }
