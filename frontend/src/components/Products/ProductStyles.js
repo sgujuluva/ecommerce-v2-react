@@ -14,7 +14,6 @@ export const WrapperProd = styled.div`
   img {
     width: 80%;
     height: 20vh;
-
     object-fit: contain;
     margin-left: 10%;
     border-radius: 25px;

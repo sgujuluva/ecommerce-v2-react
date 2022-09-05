@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import {useNavigate} from "react-router-dom";
 import axios from "axios";
+
 //styles
 import "./Signup.css";
 
@@ -8,8 +10,8 @@ function SignUp() {
   const [checkPassword, setCheckPassword] = useState(false)
 
   const fetchApi = async () => {
-    console.log(user)
-    const response = await axios.post("http://localhost:8080/api/signup", {
+   
+      const response = await axios.post("http://localhost:8090/api/signup", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
@@ -17,7 +19,8 @@ function SignUp() {
       },
     });
     //backend api
-    console.log(response.data);
+    console.log("signup response",response.data);
+    return response.data;
   };
 
   const handleChange = (e) => {
@@ -26,10 +29,18 @@ function SignUp() {
       [e.target.name]: e.target.value, //[] => dynamic way of key in obj
     }));
   };
+
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if(checkPassword){
-   fetchApi();
+   fetchApi().then(data => {
+    if(data.success){
+      navigate("/", {state : data.user})
+    }
+   });
+
   };
 }
 

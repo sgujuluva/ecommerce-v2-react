@@ -1,3 +1,12 @@
 {
-    "users" : "[]"
+  "users": [
+    {
+      "method": "POST",
+      "body": "{\"username\":\"Sanghee\",\"email\":\"srrie.sg@gmail.com\",\"password\":\"123\"}",
+      "headers": {
+        "Content-type": "application/json; charset=UTF-8"
+      },
+      "id": "1830cf96ea2"
+    }
+  ]
 }
