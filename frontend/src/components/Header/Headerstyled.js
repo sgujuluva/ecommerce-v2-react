@@ -19,7 +19,27 @@ select{
     padding:0.5%;
     outline:none;
 }
-
+.header-search {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .header-search input {
+    width: 75%;
+    font-size: 1rem;
+    border-radius: 25px;
+    padding: 1.5%;
+    border:none;
+    outline:none;
+  }
+  .header-search .search-icon {
+    background : white;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    padding: 0.5%;
+    border:none;
+  }
 .shopping-basket{
     display:flex;
     justify-content:center;

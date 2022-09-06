@@ -10,8 +10,6 @@ import Products from "../Products/index";
 //styles
 import "./Home.css";
 import { Wrapper } from "./StyledCompHome";
-import Cart from "../Cart";
-import { useCart } from "react-use-cart";
 
 //api
 const fetchApi = async () => {
@@ -21,8 +19,20 @@ const fetchApi = async () => {
 };
 
 function Home() {
+  const [userInput, setUserInput] = useState("");
+  const [filteredItems, setFilteredItems] = useState([]);
 
-  
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setUserInput(e.target.value);
+  };
+
+  const handleClick = () => {
+   const filterItems = data.filter(item => item.title.toLowerCase().includes(userInput));
+   setFilteredItems(filterItems)
+      };
+
+console.log("filtereed array items", filteredItems)
 
   const [prodType, setProdType] = useState("all");
 
@@ -42,13 +52,19 @@ function Home() {
 
   return (
     <Wrapper>
-      <Header setProdType={setProdType} />
+
+      <Header userInput = {userInput} handleSearch = {handleSearch } handleClick = {handleClick} data= {data} setProdType={setProdType} />
 
       <div className="banner-image">
         <span>eCommerce-Shopping</span>
       </div>
       <Grid container spacing={2}>
         {
+       ( filteredItems.length > 0) ? filteredItems.map((item) => (
+            <Grid item key={item.id} xs={6} sm={3}>
+              <Products prod={item} />
+            </Grid>
+          )) : 
           prodAll.map((item) => (
             <Grid item key={item.id} xs={6} sm={3}>
               <Products prod={item} />
