@@ -9,6 +9,7 @@ import "./header.css";
 function Header({ setProdType }) {
   return (
     <Wrapper className="header">
+      <div className="header-styling">
       <NavLink to="/">
         <span>eShopping</span>{" "}
       </NavLink>
@@ -38,10 +39,10 @@ function Header({ setProdType }) {
       <NavLink to={"/login"}>Login</NavLink>
       {/* cart icon */}
       <div className="shopping-basket">
-        <img src={ShoppingBasketIcon} alt="" />
-        <span>0</span>
+      <NavLink to={"/cart"}><img src={ShoppingBasketIcon} alt="" /></NavLink>
+     {/*    <span>0</span> */}
       </div>
-   
+      </div>
     </Wrapper>
   );
 }

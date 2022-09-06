@@ -3,9 +3,12 @@ import Styled from "styled-components";
 export const Wrapper = Styled.div`
 background-color:orange;
 padding:1%;
-display:flex;
-justify-content : space-around;
-align-items:center;
+
+.header-styling{
+    display:flex;
+    justify-content : space-around;
+    align-items:center;
+}
 a{
     text-decoration:none;
     color:black;
@@ -16,36 +19,31 @@ select{
     padding:0.5%;
     outline:none;
 }
-.search-item{  
-   
-    width:20%;
-    display:flex;
-    justify-content:space-evenly;
-    align-items:center;
- }
-.search, .search-button{
-  
-    padding:2%;
-    font-weight:800;
+.search-item{
+    Width:30%;
+display:flex;
+justify-content:space-around;
+align-items:center;
+padding:1%;
 }
 .search input{
-      padding:4%;   
-      outline:none; 
+    padding:2%;
 }
-.search-button button{
-   padding:4%;
-   outline:none;
+.search-button button {
+   border:none;
+    padding:8%;
 }
 .shopping-basket{
     display:flex;
     justify-content:center;
     align-items : center;
 }
-.shopping-basket img{
-    width:20%;
-    padding:5%;
+.shopping-basket a{
+
+  width:35%;
+    padding:1%;
     }
-    .shopping-basket span{
-       font-weight:800;
+    .shopping-basket img{
+    width:100%;
         }
 `;
