@@ -1,7 +1,9 @@
 import React from "react";
+import Header from "../Header/index"
 import { useCart } from "react-use-cart";
 
 function Cart() {
+  
   const {
     isEmpty,
     totalUniqueItems,
@@ -16,13 +18,15 @@ console.log(items)
   if (isEmpty) return <p>Your Cart is Empty</p>;
 
   return (
+    <>
+    <Header/>
     <section className="py-4 container">
       <div className="row justify-content-center">
         <div className="col-12">
         <h5>
-          Cart({totalUniqueItems}) total Items: ({totalItems})
+          Cart: ({totalUniqueItems})  total Items: ({totalItems})
         </h5>
-        <table>
+        <table className="table table-light table-hover m-0">
           <tbody>
             {items.map((item, index) => {
               return (
@@ -73,7 +77,9 @@ console.log(items)
         </div>
       </div>
     </section>
+    </>
   );
+ 
 }
 
 export default Cart;
