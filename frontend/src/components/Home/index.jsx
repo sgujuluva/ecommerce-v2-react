@@ -10,6 +10,7 @@ import Products from "../Products/index";
 //styles
 import "./Home.css";
 import { Wrapper } from "./StyledCompHome";
+import Cart from "../Cart";
 
 //api
 const fetchApi = async () => {
@@ -47,6 +48,7 @@ function Home() {
           prodAll.map((item) => (
             <Grid item key={item.id} xs={6} sm={3}>
               <Products prod={item} />
+              <Cart prod={item}/>
             </Grid>
           ))
           /*  :

@@ -6,7 +6,7 @@ import {WrapperProd} from "./ProductStyles"
 import "./products.css"
 
 function Products({prod}) {
-  /*   console.log(prod) */
+    console.log(prod) 
   /* usecart hook */
   const { addItem } = useCart();
 
