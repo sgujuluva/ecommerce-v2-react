@@ -2,6 +2,21 @@
 @media only screen and (max-width:750px) {
 .header a{
     border:2px solid red;
-    font-size: 1rem;
+    font-size: 0.5rem;
 }
    }
+
+   /* .search-item{
+    width:30%;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+padding:1%;
+}
+.search input{
+    padding:2%;
+}
+.search-button button {
+   border:none;
+    padding:8%;
+} */

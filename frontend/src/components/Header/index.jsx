@@ -8,7 +8,17 @@ import "./header.css";
 import { useCart } from "react-use-cart";
 
 function Header({ setProdType }) {
-  const {totalItems} = useCart();
+const [userInput,setUserInput] = useState("");
+  const {totalItems } = useCart();
+
+  const handleSearch = () => {
+
+  }
+
+  const handleClick = () => {
+
+  }
+
   return (
     <Wrapper className="header">
       <div className="header-styling">
@@ -27,13 +37,17 @@ function Header({ setProdType }) {
       </select>
       
       {/* search bar */}
-      <div className="search-item">
+     {/*  <form className="search-item">
         <div className="search">
           <input type="text" placeholder="Search item" />
         </div>
         <div className="search-button">
           <button>Search</button>
         </div>
+      </form> */}
+       <div className="header-search">
+        <input type="text" onChange={handleSearch} value={userInput} />
+        <button onClick={handleClick} className="search-icon" ></button>
       </div>
       {/* sign up , if new user */}
       <NavLink to={"/signup"}>Sign up</NavLink>

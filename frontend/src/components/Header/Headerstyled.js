@@ -19,20 +19,7 @@ select{
     padding:0.5%;
     outline:none;
 }
-.search-item{
-    Width:30%;
-display:flex;
-justify-content:space-around;
-align-items:center;
-padding:1%;
-}
-.search input{
-    padding:2%;
-}
-.search-button button {
-   border:none;
-    padding:8%;
-}
+
 .shopping-basket{
     display:flex;
     justify-content:center;
