@@ -16,8 +16,9 @@ console.log(items)
   if (isEmpty) return <p>Your Cart is Empty</p>;
 
   return (
-    <section>
-      <div className="cart-container">
+    <section className="py-4 container">
+      <div className="row justify-content-center">
+        <div className="col-12">
         <h5>
           Cart({totalUniqueItems}) total Items: ({totalItems})
         </h5>
@@ -31,7 +32,7 @@ console.log(items)
                   </td>
                   <td>{item.title}</td>
                   <td>{item.price}</td>
-                  <td>Quantity ({item.Quantity})</td>
+                  <td>Quantity ({item.quantity})</td>
                   <td>
                     <button
                       className="btn btn-info ms-2"
@@ -63,12 +64,13 @@ console.log(items)
         </table>
       </div>
       <div className="col-auto ms-auto">
-        <h2>Total Price : {cartTotal}</h2>
+        <h2>Total Price : {cartTotal.toFixed(2)}</h2>
       </div>
       <div className="col-auto ms-auto">
         <button className="btn btn-danger m-2" 
                 onClick={() => emptyCart() }
         >Clear Cart</button>
+        </div>
       </div>
     </section>
   );
