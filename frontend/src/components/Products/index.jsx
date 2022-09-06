@@ -10,8 +10,6 @@ function Products({prod}) {
   /* usecart hook */
   const { addItem } = useCart();
 
-    const handleAddToCart = (item) => null;
-
   return (
     <div className = "prod-list">
        <WrapperProd> 
@@ -23,7 +21,7 @@ function Products({prod}) {
             <p>{prod.description}</p>
             <h3>{prod.price.toFixed(2)} €</h3>
           </div>
-          <Button onClick={() => handleAddToCart()}>Add to Cart</Button>
+          <Button onClick={() => addItem(prod)}>Add to Cart</Button>
        </WrapperProd> 
     </div>
   )
