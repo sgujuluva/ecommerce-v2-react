@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
+import { CartProvider, useCart } from "react-use-cart";
 
 function Cart() {
-  return (
-    <div>Cart</div>
-  )
+  const { isEmpty, totalUniqueItems, items, updateItemQuantity, removeItem } =
+    useCart();
+
+  return <div></div>;
 }
 
-export default Cart
+export default Cart;
