@@ -17,8 +17,6 @@ const fetchApi = async () => {
   const data = await response.json();
   return data;
 };
-//handleAddToCArt
-const handleAddToCart = () => {};
 
 function Home() {
   const [prodType, setProdType] = useState("all");
@@ -48,7 +46,7 @@ function Home() {
         {
           prodAll.map((item) => (
             <Grid item key={item.id} xs={6} sm={3}>
-              <Products prods={item} handleAddToCart={handleAddToCart} />
+              <Products prod={item} />
             </Grid>
           ))
           /*  :
