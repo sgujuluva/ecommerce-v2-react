@@ -5,14 +5,17 @@ function Cart({item}) {
 
     const{prod} = useCart();
 
-  const { isEmpty, totalUniqueItems, items, updateItemQuantity, removeItem } = useCart();
+  const { isEmpty, totalUniqueItems,totalItems, items, updateItemQuantity, removeItem } = useCart();
 
     if(isEmpty) return <p>Your Cart is Empty</p>
 
   return (
-    <>
-  { console.log("prod in cart", item)}
-  </>
+    <section>
+        <div className="cart-container">
+        <h5>Cart({totalUniqueItems}) total Items: ({totalItems})</h5>
+        </div>
+    
+  </section>
   )
 }
 

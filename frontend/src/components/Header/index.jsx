@@ -41,7 +41,7 @@ function Header({ setProdType }) {
         <img src={ShoppingBasketIcon} alt="" />
         <span>0</span>
       </div>
-      {/*   <Home category = {category}/> */}
+   
     </Wrapper>
   );
 }
