@@ -5,8 +5,10 @@ import { Wrapper } from "./Headerstyled";
 import ShoppingBasketIcon from "../../images/cart.png";
 import Home from "../Home/index";
 import "./header.css";
+import { useCart } from "react-use-cart";
 
 function Header({ setProdType }) {
+  const {totalItems} = useCart();
   return (
     <Wrapper className="header">
       <div className="header-styling">
@@ -40,7 +42,7 @@ function Header({ setProdType }) {
       {/* cart icon */}
       <div className="shopping-basket">
       <NavLink to={"/cart"}><img src={ShoppingBasketIcon} alt="" /></NavLink>
-     {/*    <span>0</span> */}
+         <span>{totalItems}</span> 
       </div>
       </div>
     </Wrapper>

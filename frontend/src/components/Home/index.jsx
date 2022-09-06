@@ -11,6 +11,7 @@ import Products from "../Products/index";
 import "./Home.css";
 import { Wrapper } from "./StyledCompHome";
 import Cart from "../Cart";
+import { useCart } from "react-use-cart";
 
 //api
 const fetchApi = async () => {
@@ -20,6 +21,9 @@ const fetchApi = async () => {
 };
 
 function Home() {
+
+  
+
   const [prodType, setProdType] = useState("all");
 
   let location = useLocation(); //navigating the signup page to home page
@@ -34,7 +38,7 @@ function Home() {
   if (isLoading) return <LinearProgress />;
   if (error) return <p>Oops,Something Went Wrong!!!</p>;
 
-    console.log(prodType);
+  console.log(prodType);
 
   return (
     <Wrapper>
@@ -48,7 +52,6 @@ function Home() {
           prodAll.map((item) => (
             <Grid item key={item.id} xs={6} sm={3}>
               <Products prod={item} />
-             
             </Grid>
           ))
           /*  :
@@ -57,7 +60,6 @@ function Home() {
             <Products prods={item} handleAddToCart={handleAddToCart} />
           </Grid>
         )) */
-        
         }
       </Grid>
     </Wrapper>

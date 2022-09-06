@@ -9,11 +9,11 @@ import Cart from '../Cart';
 function Products({prod}) {
     console.log(prod) 
   /* usecart hook */
-  const { addItem } = useCart();
+   const { addItem } = useCart(); 
 //handleCart
-const handleCart = () => {
+/* const handleCart = () => {
     <Cart/>
-}
+} */
 
   return (
     <div className = "prod-list">
@@ -24,12 +24,10 @@ const handleCart = () => {
           <div className="prod-details">
             <h3>{prod.title}</h3>
             <p>{prod.description}</p>
-            <h3>{prod.price.toFixed(2)} €</h3>
-            <Cart item={prod}/>
+            <h3>{prod.price.toFixed(2)} €</h3>          
           </div>
-          <Button onClick={handleCart}>Add to Cart</Button>
-          {/* () => addItem(prod) */}
-       </WrapperProd> 
+       <Button onClick={() => addItem(prod) }>Add to Cart</Button> 
+            </WrapperProd> 
     </div>
   )
 }

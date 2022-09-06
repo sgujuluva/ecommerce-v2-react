@@ -1,7 +1,7 @@
 import React from "react";
 import { useCart } from "react-use-cart";
 
-function Cart({ item }) {
+function Cart() {
   const {
     isEmpty,
     totalUniqueItems,
@@ -12,7 +12,7 @@ function Cart({ item }) {
     cartTotal,
     emptyCart,
   } = useCart();
-
+console.log(items) 
   if (isEmpty) return <p>Your Cart is Empty</p>;
 
   return (
