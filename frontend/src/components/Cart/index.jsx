@@ -3,7 +3,7 @@ import { useCart } from "react-use-cart";
 
 function Cart({item}) {    
 
-  const { isEmpty, totalUniqueItems,totalItems, items, updateItemQuantity, removeItem } = useCart();
+  const { isEmpty, totalUniqueItems,totalItems, items, updateItemQuantity, removeItem,cartTotal } = useCart();
 
     if(isEmpty) return <p>Your Cart is Empty</p>
 
@@ -39,7 +39,9 @@ function Cart({item}) {
             </tbody>
         </table>
         </div>
-    
+    <div className="col-auto ms-auto">
+<h2>Total Price : {cartTotal}</h2>
+    </div>
   </section>
   )
 }
