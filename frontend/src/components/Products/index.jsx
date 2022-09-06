@@ -1,12 +1,17 @@
 import React from 'react'
 import Button from "@material-ui/core/Button";
+import { CartProvider, useCart } from "react-use-cart";
 //styles
 import {WrapperProd} from "./ProductStyles"
 import "./products.css"
 
 function Products({prod}) {
-/*   console.log(prod) */
+  /*   console.log(prod) */
+  /* usecart hook */
+  const { addItem } = useCart();
+
     const handleAddToCart = (item) => null;
+
   return (
     <div className = "prod-list">
        <WrapperProd> 
