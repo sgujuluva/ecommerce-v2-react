@@ -1,5 +1,6 @@
 //lib
 import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 //components
 import Header from "./components/Header";
 import SignUp from "./components/Signup";
@@ -9,7 +10,7 @@ import Cart from "./components/Cart";
 //styles
 import "./App.css";
 import Login from "./components/Login";
-import { useState } from "react";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
  

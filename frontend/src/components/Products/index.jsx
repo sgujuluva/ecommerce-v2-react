@@ -4,6 +4,7 @@ import { CartProvider, useCart } from "react-use-cart";
 //styles
 import {WrapperProd} from "./ProductStyles"
 import "./products.css"
+import Cart from '../Cart';
 
 function Products({prod}) {
     console.log(prod) 
@@ -20,6 +21,7 @@ function Products({prod}) {
             <h3>{prod.title}</h3>
             <p>{prod.description}</p>
             <h3>{prod.price.toFixed(2)} €</h3>
+            <Cart item={prod}/>
           </div>
           <Button onClick={() => addItem(prod)}>Add to Cart</Button>
        </WrapperProd> 

@@ -48,7 +48,7 @@ function Home() {
           prodAll.map((item) => (
             <Grid item key={item.id} xs={6} sm={3}>
               <Products prod={item} />
-              <Cart prod={item}/>
+             
             </Grid>
           ))
           /*  :
