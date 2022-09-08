@@ -47,5 +47,5 @@ app.post("/api/signup",async(req, res) => {
    
 })
 app.get("/api/login",(req, res) => {
-    res.send(req.body)
+    res.send(db.data.users)
 })

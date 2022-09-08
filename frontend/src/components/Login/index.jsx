@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Login.css";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 //axios
 
+
 function Login() {
+
+  let navigate = useNavigate();
   /* input user */
   const [user, setUser] = useState({ email: "", password: "" });
 
@@ -19,18 +23,19 @@ function Login() {
   
   };
   const handleChange = (e) => {
-    setUser((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value, //[] => dynamic way of key in obj
-    }));
+    setUser({...user,[e.target.name]: e.target.value });//[] => dynamic way of key in obj //name is the attribute of input
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-   
+   if(apiUser.some(item => item.email === user.email)){
+navigate("/")
+   }else{
+    alert("Please enter the correct details")
+   }
   };
 
 useEffect(() => {
-  fetchApi().then(res => console.log(res))
+  fetchApi().then(res => setApiUser(res))
 })
 
   return (
