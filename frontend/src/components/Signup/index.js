@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 //styles
@@ -7,21 +7,26 @@ import "./Signup.css";
 
 function SignUp() {
   const [user, setUser] = useState({ username: "", email: "", password: "" });
-  const [checkPassword, setCheckPassword] = useState(false)
+  const [checkPassword, setCheckPassword] = useState(false);
 
-  const fetchApi = async () => { //fetch data from backend
-   
-      const response = await axios.post("http://localhost:8080/api/signup", {
-      method: "POST",
-      body: JSON.stringify(user),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
+  const fetchApi = async () => {
+    //fetch data from backend
+
+    const response = await axios.post("http://localhost:8095/api/signup",{
+      username : user.username,
+      email:user.email,
+      password:user.password
     });
     //backend api
     return response.data;
   };
-
+  /*  {
+  method: "POST",
+  body: JSON.stringify(user),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8",
+  },
+}  */
   const handleChange = (e) => {
     setUser((prev) => ({
       ...prev,
@@ -29,19 +34,21 @@ function SignUp() {
     }));
   };
 
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // to navigate to home page after successful addition of user
 
-  const handleSubmit = (e) => { //multiple things on clicking signup form
+  const handleSubmit = (e) => {
+    //multiple things on clicking signup form
     e.preventDefault();
-    if(checkPassword){   //1. check checkpwd is true, then 
-   fetchApi().then(data => {     
-    if(data.success){
-      navigate("/", {state : data.user})//once the signup button pressed if user doesn't exist already , user will be added to db and signup page is navigated to home page
+    if (checkPassword) {
+      //1. check checkpwd is true, then
+      fetchApi().then((data) => {
+        if (data.success) {
+          navigate("/login"); //once the signup button pressed if user doesn't exist already , user will be added to db and signup page is navigated to home page
+          /* , { state: data.user } */
+        }
+      });
     }
-   });
-
   };
-}
 
   return (
     <div className="signup-form">
@@ -80,7 +87,11 @@ function SignUp() {
         <div className="confirm-password">
           <span>Confirm Password:</span>
           <input
-            onChange={(e) => e.target.value === user.password ? setCheckPassword(true) : setCheckPassword(false)}
+            onChange={(e) =>
+              e.target.value === user.password
+                ? setCheckPassword(true)
+                : setCheckPassword(false)
+            }
             type="password"
             placeholder="Enter your password"
             name="password"

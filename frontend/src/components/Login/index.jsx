@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Login.css";
+import { useEffect } from "react";
 //axios
 
 function Login() {
+  /* input user */
   const [user, setUser] = useState({ email: "", password: "" });
 
+  //getting data from api
+  const [apiUser, setApiUser] = useState([]);
+
   const fetchApi = async () => {
-    const response = await axios.get("http://localhost:8080/api/login", {
-      method: "POST",
-      body: JSON.stringify(user),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    });
+    const response = await fetch("http://localhost:8095/api/login");
+    const json = await response.json();
+    return json;
     //backend api
-    console.log(response.data);
+  
   };
   const handleChange = (e) => {
     setUser((prev) => ({
@@ -25,8 +26,12 @@ function Login() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchApi();
+   
   };
+
+useEffect(() => {
+  fetchApi().then(res => console.log(res))
+})
 
   return (
     <div className="login-form">

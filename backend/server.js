@@ -15,12 +15,12 @@ console.log("db data",db.data)
 app.use(express.json());
 //cors option
 
-  app.use(cors({origin : "http://localhost:3000"}));
+  app.use(cors({origin : "http://localhost:3001"}));
 
 
   
-app.listen(8090, () => {
-    console.log("Server running at the PORT 8080");
+app.listen(8095, () => {
+    console.log("Server running at the PORT 8095");
 })
 
 const uid = () => {
@@ -45,4 +45,7 @@ app.post("/api/signup",async(req, res) => {
         res.send({user: req.body,msg:"user already exist",success : false})
     }
    
+})
+app.get("/api/login",(req, res) => {
+    res.send(req.body)
 })
