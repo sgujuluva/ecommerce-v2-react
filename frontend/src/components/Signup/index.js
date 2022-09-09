@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import {Datas} from "../Context/Context"
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -6,16 +7,19 @@ import axios from "axios";
 import "./Signup.css";
 
 function SignUp() {
-  const [user, setUser] = useState({ username: "", email: "", password: "" });
+
+  const {userSignup, setUserSignup} = useContext(Datas);
+
+ /*  const [user, setUser] = useState({ username: "", email: "", password: "" }); */
   const [checkPassword, setCheckPassword] = useState(false);
 
   const fetchApi = async () => {
     //fetch data from backend
 
     const response = await axios.post("http://localhost:8095/api/signup",{
-      username : user.username,
-      email:user.email,
-      password:user.password
+      username : userSignup.username,
+      email:userSignup.email,
+      password:userSignup.password
     });
     //backend api
     return response.data;
@@ -28,8 +32,8 @@ function SignUp() {
   },
 }  */
   const handleChange = (e) => {
-    setUser(
-      {...user,
+    setUserSignup(
+      {...userSignup,
       [e.target.name]: e.target.value} //[] => dynamic way of key in obj
     );
   };
@@ -88,7 +92,7 @@ function SignUp() {
           <span>Confirm Password:</span>
           <input
             onChange={(e) =>
-              e.target.value === user.password
+              e.target.value === userSignup.password
                 ? setCheckPassword(true)
                 : setCheckPassword(false)
             }

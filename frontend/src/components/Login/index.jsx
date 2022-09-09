@@ -9,11 +9,11 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
   //from context
-  const {apiUser, setApiUser} = useContext(Datas)
+  const {apiUser, setApiUser,loginUser, setLoginUser} = useContext(Datas)
 
   let navigate = useNavigate();
   /* input user */
-  const [user, setUser] = useState({ email: "", password: "" });
+  /* const [user, setUser] = useState({ email: "", password: "" }); */
 
   //getting data from api
   /* const [apiUser, setApiUser] = useState([]); */
@@ -26,11 +26,11 @@ function Login() {
   
   };
   const handleChange = (e) => {
-    setUser({...user,[e.target.name]: e.target.value });//[] => dynamic way of key in obj //name is the attribute of input
+    setLoginUser({...loginUser,[e.target.name]: e.target.value });//[] => dynamic way of key in obj //name is the attribute of input
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-   if(apiUser.some(item => item.email === user.email)){
+   if(apiUser.some(item => item.email === loginUser.email)){
 navigate("/")
    }else{
     alert("Please enter the correct details")
