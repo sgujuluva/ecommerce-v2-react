@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
+import {Datas} from "../Context/Context"
 import "./Login.css";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -7,13 +8,15 @@ import { useNavigate } from "react-router-dom";
 
 
 function Login() {
+  //from context
+  const {apiUser, setApiUser} = useContext(Datas)
 
   let navigate = useNavigate();
   /* input user */
   const [user, setUser] = useState({ email: "", password: "" });
 
   //getting data from api
-  const [apiUser, setApiUser] = useState([]);
+  /* const [apiUser, setApiUser] = useState([]); */
 
   const fetchApi = async () => {
     const response = await fetch("http://localhost:8095/api/login");

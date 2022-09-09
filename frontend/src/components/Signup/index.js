@@ -28,10 +28,10 @@ function SignUp() {
   },
 }  */
   const handleChange = (e) => {
-    setUser((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value, //[] => dynamic way of key in obj
-    }));
+    setUser(
+      {...user,
+      [e.target.name]: e.target.value} //[] => dynamic way of key in obj
+    );
   };
 
   const navigate = useNavigate(); // to navigate to home page after successful addition of user
