@@ -6,6 +6,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { CartProvider } from "react-use-cart";
+import Context from "./components/Context/Context"
 
 const client = new QueryClient();
 
@@ -15,7 +16,9 @@ root.render(
   <QueryClientProvider client={client}>
     <BrowserRouter>
       <CartProvider>
+        <Context>
         <App />
+        </Context>
       </CartProvider>
     </BrowserRouter>
   </QueryClientProvider>
