@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import {Datas} from "../Context/Context"
+import { Datas } from "../Context/Context";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -7,19 +7,18 @@ import axios from "axios";
 import "./Signup.css";
 
 function SignUp() {
+  const { userSignup, setUserSignup } = useContext(Datas);
 
-  const {userSignup, setUserSignup} = useContext(Datas);
-
- /*  const [user, setUser] = useState({ username: "", email: "", password: "" }); */
+  /*  const [user, setUser] = useState({ username: "", email: "", password: "" }); */
   const [checkPassword, setCheckPassword] = useState(false);
 
   const fetchApi = async () => {
     //fetch data from backend
 
-    const response = await axios.post("http://localhost:8095/api/signup",{
-      username : userSignup.username,
-      email:userSignup.email,
-      password:userSignup.password
+    const response = await axios.post("http://localhost:8095/api/signup", {
+      username: userSignup.username,
+      email: userSignup.email,
+      password: userSignup.password,
     });
     //backend api
     return response.data;
@@ -33,8 +32,7 @@ function SignUp() {
 }  */
   const handleChange = (e) => {
     setUserSignup(
-      {...userSignup,
-      [e.target.name]: e.target.value} //[] => dynamic way of key in obj
+      { ...userSignup, [e.target.name]: e.target.value } //[] => dynamic way of key in obj
     );
   };
 
@@ -97,7 +95,7 @@ function SignUp() {
                 : setCheckPassword(false)
             }
             type="password"
-            placeholder="Enter your password"
+            placeholder="Re enter your password"
             name="password"
             required
           />
