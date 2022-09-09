@@ -1,15 +1,14 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
-import {Datas} from "../Context/Context"
+import { Datas } from "../Context/Context";
 import "./Login.css";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 //axios
 
-
 function Login() {
   //from context
-  const {apiUser, setApiUser,loginUser, setLoginUser} = useContext(Datas)
+  const { apiUser, setApiUser, loginUser, setLoginUser } = useContext(Datas);
 
   let navigate = useNavigate();
   /* input user */
@@ -23,24 +22,23 @@ function Login() {
     const json = await response.json();
     return json;
     //backend api
-  
   };
   const handleChange = (e) => {
-    setLoginUser({...loginUser,[e.target.name]: e.target.value });//[] => dynamic way of key in obj //name is the attribute of input
+    setLoginUser({ ...loginUser, [e.target.name]: e.target.value }); //[] => dynamic way of key in obj //name is the attribute of input
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-   if(apiUser.some(item => item.email === loginUser.email)){
-navigate("/")
-   }else{
-    alert("Please enter the correct details")
-   }
+    if (apiUser.some((item) => item.email === loginUser.email)) {
+      navigate("/");
+    } else {
+      alert("Please enter the correct details");
+    }
   };
 
-useEffect(() => {
-  fetchApi().then(res => setApiUser(res))
-})
-
+  useEffect(() => {
+    fetchApi().then((res) => setApiUser(res));
+  });
+console.log("api user in login page",apiUser)
   return (
     <div className="login-form">
       <h1>Welcome to Login Page</h1>

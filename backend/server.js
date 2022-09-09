@@ -15,7 +15,7 @@ console.log("db data",db.data)
 app.use(express.json());
 //cors option
 
-  app.use(cors({origin : "http://localhost:3001"}));
+  app.use(cors({origin : "http://localhost:3000"}));
 
 
   

@@ -1,6 +1,5 @@
 {
   "users": [
-  
     {
       "username": "qwe",
       "email": "asd@dfg.com",
@@ -12,6 +11,12 @@
       "email": "hkjhfkjg@ghfsdghfiu.com",
       "password": "123",
       "id": "1831d7a5ab1"
+    },
+    {
+      "username": "maha",
+      "email": "maha@abc.com",
+      "password": "123",
+      "id": "183225dd185"
     }
   ]
 }

@@ -7,6 +7,7 @@ import axios from "axios";
 import "./Signup.css";
 
 function SignUp() {
+
   const { userSignup, setUserSignup } = useContext(Datas);
 
   /*  const [user, setUser] = useState({ username: "", email: "", password: "" }); */
@@ -23,13 +24,7 @@ function SignUp() {
     //backend api
     return response.data;
   };
-  /*  {
-  method: "POST",
-  body: JSON.stringify(user),
-  headers: {
-    "Content-type": "application/json; charset=UTF-8",
-  },
-}  */
+ 
   const handleChange = (e) => {
     setUserSignup(
       { ...userSignup, [e.target.name]: e.target.value } //[] => dynamic way of key in obj
@@ -51,7 +46,7 @@ function SignUp() {
       });
     }
   };
-
+console.log("sign up datas:",userSignup)
   return (
     <div className="signup-form">
       <h1>E-Commerce Sign Up</h1>

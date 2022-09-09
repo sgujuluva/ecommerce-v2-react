@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { Wrapper } from "./Headerstyled";
+import { useCart } from "react-use-cart";
 
 import ShoppingBasketIcon from "../../images/cart.png";
 import "./header.css";
-import { useCart } from "react-use-cart";
+//context
+import { Datas } from "../Context/Context";
 
 function Header({ setProdType, data, handleSearch, handleClick, userInput }) {
-/*   console.log("data is,", data) */
-
- 
+  /* console.log("data is,", data)  */
+  //from context
+  const { apiUser, loginUser, setLoginUser } = useContext(Datas);
+  console.log("apiuser  from header is:", apiUser);
+  //usecart
   const { totalItems } = useCart();
+  //finding the correct user
 
-
-
+  let findUser = apiUser.find((item) => item.email === loginUser.email);
+  console.log("find user", findUser);
+  let signout = () => {
+    setLoginUser({ email: "", password: "" });
+  };
   return (
     <Wrapper className="header">
       <div className="header-styling">
@@ -38,10 +46,21 @@ function Header({ setProdType, data, handleSearch, handleClick, userInput }) {
             Search
           </button>
         </div>
-        {/* sign up , if new user */}
-        <NavLink to={"/signup"}>Sign up</NavLink>
-        {/* login for already existing user */}
-        <NavLink to={"/login"}>Login</NavLink>
+        {findUser ? (
+          <>
+            <NavLink onClick={signout} to={"/"}>
+              Sign out
+            </NavLink>
+            <h3>Welcome {findUser.username}</h3>
+          </>
+        ) : (
+          <>
+            {/* sign up , if new user */}
+            <NavLink to={"/signup"}>Sign up</NavLink>
+            {/* login for already existing user */}
+            <NavLink to={"/login"}>Login</NavLink>
+          </>
+        )}
         {/* cart icon */}
         <div className="shopping-basket">
           <NavLink to={"/cart"}>

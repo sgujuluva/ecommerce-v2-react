@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
-import Header from "../Header";
-import LinearProgress from "@material-ui/core/LinearProgress";
-import Grid from "@material-ui/core/Grid";
-
 //comp
+import Header from "../Header";
 import Products from "../Products/index";
+
 //styles
 import "./Home.css";
 import { Wrapper } from "./StyledCompHome";
+import LinearProgress from "@material-ui/core/LinearProgress";
+import Grid from "@material-ui/core/Grid";
 
 //api
 const fetchApi = async () => {
@@ -19,6 +19,7 @@ const fetchApi = async () => {
 };
 
 function Home() {
+  
   const [userInput, setUserInput] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
 
@@ -28,11 +29,13 @@ function Home() {
   };
 
   const handleClick = () => {
-   const filterItems = data.filter(item => item.title.toLowerCase().includes(userInput));
-   setFilteredItems(filterItems)
-      };
+    const filterItems = data.filter((item) =>
+      item.title.toLowerCase().includes(userInput)
+    );
+    setFilteredItems(filterItems);
+  };
 
-console.log("filtereed array items", filteredItems)
+  console.log("filtereed array items", filteredItems);
 
   const [prodType, setProdType] = useState("all");
 
@@ -52,24 +55,30 @@ console.log("filtereed array items", filteredItems)
 
   return (
     <Wrapper>
-
-      <Header userInput = {userInput} handleSearch = {handleSearch } handleClick = {handleClick} data= {data} setProdType={setProdType} />
+      <Header
+        userInput={userInput}
+        handleSearch={handleSearch}
+        handleClick={handleClick}
+        data={data}
+        setProdType={setProdType}
+      />
 
       <div className="banner-image">
         <span>eCommerce-Shopping</span>
       </div>
       <Grid container spacing={2}>
         {
-       ( filteredItems.length > 0) ? filteredItems.map((item) => (
-            <Grid item key={item.id} xs={6} sm={3}>
-              <Products prod={item} />
-            </Grid>
-          )) : 
-          prodAll.map((item) => (
-            <Grid item key={item.id} xs={6} sm={3}>
-              <Products prod={item} />
-            </Grid>
-          ))
+          filteredItems.length > 0
+            ? filteredItems.map((item) => (
+                <Grid item key={item.id} xs={6} sm={3}>
+                  <Products prod={item} />
+                </Grid>
+              ))
+            : prodAll.map((item) => (
+                <Grid item key={item.id} xs={6} sm={3}>
+                  <Products prod={item} />
+                </Grid>
+              ))
           /*  :
         data?.filter(item => item.category === (prodType)).map((item) => (
           <Grid item key={item.id} xs={6} sm={3}>
