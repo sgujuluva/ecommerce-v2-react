@@ -47,10 +47,16 @@ select{
 }
 .shopping-basket a{
 
-  width:35%;
+  width:30%;
     padding:1%;
     }
     .shopping-basket img{
     width:100%;
         }
+h3{
+   font-size:1.2rem;
+   display:flex;
+   justify-content:center;
+ align-items:center;
+}
 `;

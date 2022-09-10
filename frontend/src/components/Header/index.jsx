@@ -51,7 +51,7 @@ function Header({ setProdType, data, handleSearch, handleClick, userInput }) {
             <NavLink onClick={signout} to={"/"}>
               Sign out
             </NavLink>
-            <h3>Welcome {findUser.username}</h3>
+            <h3 classname="find-user" >Welcome {findUser.username[0].toUpperCase()+findUser.username.slice(1)}</h3>
           </>
         ) : (
           <>
