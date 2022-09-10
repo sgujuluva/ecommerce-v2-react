@@ -17,6 +17,12 @@
       "email": "maha@abc.com",
       "password": "123",
       "id": "183225dd185"
+    },
+    {
+      "username": "sri",
+      "email": "sri@abc.com",
+      "password": "123",
+      "id": "18322bbfbb4"
     }
   ]
 }

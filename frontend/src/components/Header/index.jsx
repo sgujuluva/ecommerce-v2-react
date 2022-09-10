@@ -16,9 +16,9 @@ function Header({ setProdType, data, handleSearch, handleClick, userInput }) {
   //usecart
   const { totalItems } = useCart();
   //finding the correct user
-
   let findUser = apiUser.find((item) => item.email === loginUser.email);
   console.log("find user", findUser);
+  //signout fucnction
   let signout = () => {
     setLoginUser({ email: "", password: "" });
   };

@@ -12,7 +12,7 @@ padding:1%;
 a{
     text-decoration:none;
     color:black;
-    font-size:1.5rem;
+    font-size:1.2rem;
     font-weight:800;
 }
 select{
@@ -20,24 +20,24 @@ select{
     outline:none;
 }
 .header-search {
-    width: 50%;
+     width: 40%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
   }
   .header-search input {
-    width: 75%;
+    width: 85%;
     font-size: 1rem;
     border-radius: 25px;
-    padding: 1.5%;
+    padding: 1%;
     border:none;
     outline:none;
   }
   .header-search .search-icon {
     background : white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-radius: 25px;
-    padding: 0.5%;
+    
     border:none;
   }
 .shopping-basket{
